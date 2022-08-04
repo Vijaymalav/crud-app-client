@@ -29,7 +29,7 @@ const AddUser = () => {
 
     const addUserDetails = async() => {
       if(user===initialValue){
-        alert("please the data");
+        alert("please fill the data");
       }
       else {
         await addUser(user);

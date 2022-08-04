@@ -26,10 +26,12 @@ const AllUsers = () => {
     const [users, setUsers] = useState([]);
     
     useEffect(() => {
+        // console.log(users);
         getAllUsers();
     }, []);
 
     const deleteUserData = async (id) => {
+        console.log(id)
         await deleteUser(id);
         getAllUsers();
     }
@@ -48,18 +50,19 @@ const AllUsers = () => {
                     <TableCell>Username</TableCell>
                     <TableCell>Email</TableCell>
                     <TableCell>Phone</TableCell>
-                    <TableCell></TableCell>
+                   
                 </THead>
             </TableHead>
             <TableBody>
                 
-                {users.map((user, index) => (
+                {users && users.map((user, index) => (
                     <TRow key={user.id}>
                         <TableCell>{index + 1}</TableCell> {/* change it to user.id to use JSON Server */}
                         <TableCell>{user.name}</TableCell>
                         <TableCell>{user.username}</TableCell>
                         <TableCell>{user.email}</TableCell>
                         <TableCell>{user.phone}</TableCell>
+                        <TableCell></TableCell>
                         <TableCell>
                             <Button color="primary" variant="contained" style={{marginRight:10}} component={Link} to={`/edit/${user._id}`}>Edit</Button> {/* change it to user.id to use JSON Server */}
                             <Button color="secondary" variant="contained" onClick={() => deleteUserData(user._id)}>Delete</Button> {/* change it to user.id to use JSON Server */}

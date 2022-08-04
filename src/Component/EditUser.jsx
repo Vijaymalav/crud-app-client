@@ -25,7 +25,8 @@ const EditUser = () => {
     
     let navigate = useNavigate();
 
-    useEffect((id) => {
+    useEffect(() => {
+        console.log(id)
         loadUserDetails(id);
     }, []);
 
