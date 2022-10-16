@@ -14,6 +14,7 @@ export const getUsers = async () => {
 }
 export const getUser = async (id) => {
     try{
+        
         return await axios.get(`${usersUrl}/${id}`);
     }
     catch(error){
