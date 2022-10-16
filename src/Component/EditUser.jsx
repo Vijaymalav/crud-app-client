@@ -39,6 +39,7 @@ const EditUser = () => {
         const response = await editUser(id, user);
         console.log(response)
         navigate('/all');
+        console.log("a")
     }
 
     const onValueChange = (e) => {
