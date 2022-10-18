@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // const usersUrl = 'http://localhost:8000';
 const usersUrl = process.env.REACT_APP_API_KEY || 'http://localhost:8000';
-
+// const usersUrl='https://crud-app-server-vijay.herokuapp.com/'
 export const getUsers = async () => {
     try{
         return await axios.get(`${usersUrl}/all`);
